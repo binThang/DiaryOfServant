@@ -1,0 +1,140 @@
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preDebugBuild UP-TO-DATE
+> Task :app:compileDebugAidl NO-SOURCE
+> Task :app:generateDebugBuildConfig UP-TO-DATE
+> Task :app:compileDebugRenderscript NO-SOURCE
+> Task :app:prepareDebugKotlinCompileTask
+> Task :app:generateDebugResValues UP-TO-DATE
+> Task :app:generateDebugResources UP-TO-DATE
+> Task :app:mergeDebugResources UP-TO-DATE
+> Task :app:createDebugCompatibleScreenManifests UP-TO-DATE
+> Task :app:extractDeepLinksDebug UP-TO-DATE
+> Task :app:processDebugManifest UP-TO-DATE
+> Task :app:processDebugResources UP-TO-DATE
+
+> Task :app:compileDebugKotlin FAILED
+w: ATTENTION!
+This build uses unsafe internal compiler arguments:
+
+-XXLanguage:+NonParenthesizedAnnotationsOnFunctionalTypes
+
+This mode is not recommended for production use,
+as no stability/compatibility guarantees are given on
+compiler or generated code. Use it at your own risk!
+
+e: java.lang.IllegalStateException: Backend Internal error: Exception during code generation
+Element is unknownThe root cause java.util.NoSuchElementException was thrown at: androidx.compose.plugins.kotlin.compiler.lower.ComposableCallTransformer.irComposableExpr(ComposableCallTransformer.kt:1362)
+	at org.jetbrains.kotlin.codegen.CompilationErrorHandler.lambda$static$0(CompilationErrorHandler.java:35)
+	at org.jetbrains.kotlin.backend.jvm.JvmBackendFacade.doGenerateFilesInternal$backend_jvm(JvmBackendFacade.kt:93)
+	at org.jetbrains.kotlin.backend.jvm.JvmBackendFacade.doGenerateFilesInternal$backend_jvm$default(JvmBackendFacade.kt:64)
+	at org.jetbrains.kotlin.backend.jvm.JvmBackendFacade.doGenerateFilesInternal$backend_jvm(JvmBackendFacade.kt:52)
+	at org.jetbrains.kotlin.backend.jvm.JvmIrCodegenFactory.generateModule(JvmIrCodegenFactory.kt:36)
+	at org.jetbrains.kotlin.codegen.KotlinCodegenFacade.doGenerateFiles(KotlinCodegenFacade.java:47)
+	at org.jetbrains.kotlin.codegen.KotlinCodegenFacade.compileCorrectFiles(KotlinCodegenFacade.java:39)
+	at org.jetbrains.kotlin.cli.jvm.compiler.KotlinToJVMBytecodeCompiler.generate(KotlinToJVMBytecodeCompiler.kt:638)
+	at org.jetbrains.kotlin.cli.jvm.compiler.KotlinToJVMBytecodeCompiler.compileModules$cli(KotlinToJVMBytecodeCompiler.kt:198)
+	at org.jetbrains.kotlin.cli.jvm.K2JVMCompiler.doExecute(K2JVMCompiler.kt:172)
+	at org.jetbrains.kotlin.cli.jvm.K2JVMCompiler.doExecute(K2JVMCompiler.kt:56)
+	at org.jetbrains.kotlin.cli.common.CLICompiler.execImpl(CLICompiler.kt:85)
+	at org.jetbrains.kotlin.cli.common.CLICompiler.execImpl(CLICompiler.kt:43)
+	at org.jetbrains.kotlin.cli.common.CLITool.exec(CLITool.kt:104)
+	at org.jetbrains.kotlin.incremental.IncrementalJvmCompilerRunner.runCompiler(IncrementalJvmCompilerRunner.kt:349)
+	at org.jetbrains.kotlin.incremental.IncrementalJvmCompilerRunner.runCompiler(IncrementalJvmCompilerRunner.kt:105)
+	at org.jetbrains.kotlin.incremental.IncrementalCompilerRunner.compileIncrementally(IncrementalCompilerRunner.kt:237)
+	at org.jetbrains.kotlin.incremental.IncrementalCompilerRunner.access$compileIncrementally(IncrementalCompilerRunner.kt:37)
+	at org.jetbrains.kotlin.incremental.IncrementalCompilerRunner$compile$2.invoke(IncrementalCompilerRunner.kt:79)
+	at org.jetbrains.kotlin.incremental.IncrementalCompilerRunner.compile(IncrementalCompilerRunner.kt:91)
+	at org.jetbrains.kotlin.daemon.CompileServiceImplBase.execIncrementalCompiler(CompileServiceImpl.kt:606)
+	at org.jetbrains.kotlin.daemon.CompileServiceImplBase.access$execIncrementalCompiler(CompileServiceImpl.kt:99)
+	at org.jetbrains.kotlin.daemon.CompileServiceImpl.compile(CompileServiceImpl.kt:1645)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at java.rmi/sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:359)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:200)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:197)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:691)
+	at java.rmi/sun.rmi.transport.Transport.serviceCall(Transport.java:196)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:562)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:796)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(TCPTransport.java:677)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:391)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:676)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.util.NoSuchElementException: Collection contains no element matching the predicate.
+	at androidx.compose.plugins.kotlin.compiler.lower.ComposableCallTransformer.irComposableExpr(ComposableCallTransformer.kt:1362)
+	at androidx.compose.plugins.kotlin.compiler.lower.ComposableCallTransformer.visitBlock(ComposableCallTransformer.kt:252)
+	at org.jetbrains.kotlin.ir.visitors.IrElementTransformerVoid.visitBlock(IrElementTransformerVoid.kt:128)
+	at org.jetbrains.kotlin.ir.visitors.IrElementTransformerVoid.visitBlock(IrElementTransformerVoid.kt:24)
+	at org.jetbrains.kotlin.ir.expressions.impl.IrBlockImpl.accept(IrBlockImpl.kt:52)
+	at org.jetbrains.kotlin.ir.expressions.IrExpression$DefaultImpls.transform(IrExpression.kt:28)
+	at org.jetbrains.kotlin.ir.expressions.impl.IrExpressionBase.transform(IrExpressionBase.kt:24)
+	at org.jetbrains.kotlin.ir.declarations.impl.IrVariableImpl.transformChildren(IrVariableImpl.kt:93)
+	at org.jetbrains.kotlin.ir.visitors.IrElementTransformerVoidKt.transformChildrenVoid(IrElementTransformerVoid.kt:288)
+	at org.jetbrains.kotlin.ir.visitors.IrElementTransformerVoid.transformChildrenVoid(IrElementTransformerVoid.kt:283)
+	at org.jetbrains.kotlin.ir.visitors.IrElementTransformerVoid.transformChildren(IrElementTransformerVoid.kt:25)
+	at org.jetbrains.kotlin.ir.visitors.IrElementTransformerVoid.visitDeclaration(IrElementTransformerVoid.kt:46)
+	at org.jetbrains.kotlin.ir.visitors.IrElementTransformerVoid.visitVariable(IrElementTransformerVoid.kt:87)
+	at org.jetbrains.kotlin.ir.visitors.IrElementTransformerVoid.visitVariable(IrElementTransformerVoid.kt:88)
+	at org.jetbrains.kotlin.ir.visitors.IrElementTransformerVoid.visitVariable(IrElementTransformerVoid.kt:24)
+	at org.jetbrains.kotlin.ir.declarations.impl.IrVariableImpl.accept(IrVariableImpl.kt:86)
+	at org.jetbrains.kotlin.ir.declarations.IrDeclaration$DefaultImpls.transform(IrDeclaration.kt:42)
+	at org.jetbrains.kotlin.ir.declarations.impl.IrDeclarationBase.transform(IrDeclarationBase.kt:27)
+	at org.jetbrains.kotlin.ir.expressions.impl.IrBlockBodyImpl.transformChildren(IrBlockBodyImpl.kt:49)
+	at org.jetbrains.kotlin.ir.visitors.IrElementTransformerVoidKt.transformChildrenVoid(IrElementTransformerVoid.kt:288)
+	at org.jetbrains.kotlin.ir.visitors.IrElementTransformerVoid.transformChildrenVoid(IrElementTransformerVoid.kt:283)
+	at org.jetbrains.kotlin.ir.visitors.IrElementTransformerVoid.transformChildren(IrElementTransformerVoid.kt:25)
+	at org.jetbrains.kotlin.ir.visitors.IrElementTransformerVoid.visitBody(IrElementTransformerVoid.kt:93)
+	at org.jetbrains.kotlin.ir.visitors.IrElementTransformerVoid.visitBlockBody(IrElementTransformerVoid.kt:99)
+	at org.jetbrains.kotlin.ir.visitors.IrElementTransformerVoid.visitBlockBody(IrElementTransformerVoid.kt:100)
+	at org.jetbrains.kotlin.ir.visitors.IrElementTransformerVoid.visitBlockBody(IrElementTransformerVoid.kt:24)
+	at org.jetbrains.kotlin.ir.expressions.impl.IrBlockBodyImpl.accept(IrBlockBodyImpl.kt:40)
+	at org.jetbrains.kotlin.ir.expressions.IrBody$DefaultImpls.transform(IrBody.kt:24)
+	at org.jetbrains.kotlin.ir.expressions.IrBlockBody$DefaultImpls.transform(IrBody.kt)
+	at org.jetbrains.kotlin.ir.expressions.impl.IrBlockBodyImpl.transform(IrBlockBodyImpl.kt:26)
+	at org.jetbrains.kotlin.ir.declarations.impl.IrFunctionBase.transformChildren(IrFunctionBase.kt:77)
+	at org.jetbrains.kotlin.ir.visitors.IrElementTransformerVoidKt.transformChildrenVoid(IrElementTransformerVoid.kt:288)
+	at org.jetbrains.kotlin.ir.visitors.IrElementTransformerVoid.transformChildrenVoid(IrElementTransformerVoid.kt:283)
+	at org.jetbrains.kotlin.ir.visitors.IrElementTransformerVoid.transformChildren(IrElementTransformerVoid.kt:25)
+	at org.jetbrains.kotlin.ir.visitors.IrElementTransformerVoid.visitDeclaration(IrElementTransformerVoid.kt:46)
+	at org.jetbrains.kotlin.ir.visitors.IrElementTransformerVoid.visitFunction(IrElementTransformerVoid.kt:55)
+	at androidx.compose.plugins.kotlin.compiler.lower.ComposableCallTransformer.visitFunction(ComposableCallTransformer.kt:205)
+	at org.jetbrains.kotlin.ir.visitors.IrElementTransformerVoid.visitSimpleFunction(IrElementTransformerVoid.kt:58)
+	at org.jetbrains.kotlin.ir.visitors.IrElementTransformerVoid.visitSimpleFunction(IrElementTransformerVoid.kt:59)
+	at org.jetbrains.kotlin.ir.visitors.IrElementTransformerVoid.visitSimpleFunction(IrElementTransformerVoid.kt:24)
+	at org.jetbrains.kotlin.ir.declarations.impl.IrFunctionImpl.accept(IrFunctionImpl.kt:89)
+	at org.jetbrains.kotlin.ir.declarations.IrDeclaration$DefaultImpls.transform(IrDeclaration.kt:42)
+	at org.jetbrains.kotlin.ir.declarations.impl.IrDeclarationBase.transform(IrDeclarationBase.kt:27)
+	at org.jetbrains.kotlin.ir.declarations.impl.IrFileImpl.transformChildren(IrFileImpl.kt:71)
+	at org.jetbrains.kotlin.ir.visitors.IrElementTransformerVoidKt.transformChildrenVoid(IrElementTransformerVoid.kt:288)
+	at androidx.compose.plugins.kotlin.compiler.lower.ComposableCallTransformer.lower(ComposableCallTransformer.kt:197)
+	at org.jetbrains.kotlin.backend.common.LowerKt.lower(Lower.kt:66)
+	at org.jetbrains.kotlin.backend.common.phaser.PhaseBuildersKt$makeIrModulePhase$1.invoke(PhaseBuilders.kt:235)
+	at org.jetbrains.kotlin.backend.common.phaser.PhaseBuildersKt$makeIrModulePhase$1.invoke(PhaseBuilders.kt:228)
+	at org.jetbrains.kotlin.backend.common.phaser.AbstractNamedPhaseWrapper$runBody$1.invoke(CompilerPhase.kt:128)
+	at org.jetbrains.kotlin.backend.common.phaser.CompilerPhaseKt.downlevel(CompilerPhase.kt:24)
+	at org.jetbrains.kotlin.backend.common.phaser.AbstractNamedPhaseWrapper.runBody(CompilerPhase.kt:127)
+	at org.jetbrains.kotlin.backend.common.phaser.AbstractNamedPhaseWrapper.invoke(CompilerPhase.kt:105)
+	at org.jetbrains.kotlin.backend.common.phaser.CompositePhase.invoke(PhaseBuilders.kt:29)
+	at org.jetbrains.kotlin.backend.common.phaser.CompilerPhaseKt.invokeToplevel(CompilerPhase.kt:42)
+	at org.jetbrains.kotlin.backend.jvm.JvmLower.lower(JvmLower.kt:288)
+	at org.jetbrains.kotlin.backend.jvm.JvmBackendFacade.doGenerateFilesInternal$backend_jvm(JvmBackendFacade.kt:91)
+	... 38 more
+
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':app:compileDebugKotlin'.
+> Internal compiler error. See log for more details
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
+
+* Get more help at https://help.gradle.org
+
+BUILD FAILED in 12s
+9 actionable tasks: 2 executed, 7 up-to-date
