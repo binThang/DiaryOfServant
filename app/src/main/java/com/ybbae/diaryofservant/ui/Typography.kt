@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-package com.ybbae.happycat.ui
+package com.ybbae.diaryofservant.ui
 
 import androidx.ui.material.Typography
 import androidx.ui.text.TextStyle
 import androidx.ui.text.font.*
 import androidx.ui.unit.sp
-import com.ybbae.happycat.R
+import com.ybbae.diaryofservant.R
 
 val regular = font(R.font.montserrat_regular)
 val medium = font(resId = R.font.montserrat_medium, weight =  FontWeight.W500)

@@ -1,11 +1,8 @@
-package com.ybbae.happycat.ui
+package com.ybbae.diaryofservant.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.compose.Composable
 import androidx.ui.core.setContent
-import androidx.ui.tooling.preview.Preview
-import com.ybbae.happycat.R
 
 class MainActivity : AppCompatActivity()
 {

@@ -1,4 +1,4 @@
-package com.ybbae.happycat.ui.shoping
+package com.ybbae.diaryofservant.ui.shoping
 
 import androidx.compose.Composable
 import androidx.compose.state
@@ -9,8 +9,8 @@ import androidx.ui.material.Tab
 import androidx.ui.material.TabRow
 import androidx.ui.material.TopAppBar
 import androidx.ui.tooling.preview.Preview
-import com.ybbae.happycat.R
-import com.ybbae.happycat.ui.VectorImageButton
+import com.ybbae.diaryofservant.R
+import com.ybbae.diaryofservant.ui.VectorImageButton
 
 private enum class Sections(val title: String) {
 	Feed("사료"),

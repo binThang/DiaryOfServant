@@ -14,10 +14,9 @@
  * limitations under the License.
  */
 
-package com.ybbae.happycat.ui
+package com.ybbae.diaryofservant.ui
 
 import androidx.ui.graphics.Color
-import androidx.ui.material.ColorPalette
 import androidx.ui.material.darkColorPalette
 import androidx.ui.material.lightColorPalette
 

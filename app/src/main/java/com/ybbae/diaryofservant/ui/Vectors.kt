@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.ybbae.happycat.ui
+package com.ybbae.diaryofservant.ui
 
 import androidx.annotation.DrawableRes
 import androidx.compose.Composable

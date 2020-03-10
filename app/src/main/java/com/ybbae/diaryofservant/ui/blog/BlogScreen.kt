@@ -1,4 +1,4 @@
-package com.ybbae.happycat.ui.blog
+package com.ybbae.diaryofservant.ui.blog
 
 import androidx.compose.Composable
 

@@ -1,4 +1,4 @@
-package com.ybbae.happycat.ui
+package com.ybbae.diaryofservant.ui
 
 import androidx.annotation.DrawableRes
 import androidx.compose.Composable
@@ -7,7 +7,6 @@ import androidx.ui.animation.Crossfade
 import androidx.ui.core.Clip
 import androidx.ui.core.Modifier
 import androidx.ui.core.Text
-import androidx.ui.foundation.Clickable
 import androidx.ui.foundation.shape.corner.RoundedCornerShape
 import androidx.ui.graphics.Color
 import androidx.ui.layout.*
@@ -15,10 +14,10 @@ import androidx.ui.material.*
 import androidx.ui.material.surface.Surface
 import androidx.ui.tooling.preview.Preview
 import androidx.ui.unit.dp
-import com.ybbae.happycat.R
-import com.ybbae.happycat.ui.blog.BlogScreen
-import com.ybbae.happycat.ui.home.HomeScreen
-import com.ybbae.happycat.ui.shoping.ShopingScreen
+import com.ybbae.diaryofservant.R
+import com.ybbae.diaryofservant.ui.blog.BlogScreen
+import com.ybbae.diaryofservant.ui.home.HomeScreen
+import com.ybbae.diaryofservant.ui.shoping.ShopingScreen
 
 @Composable
 fun AppMain()

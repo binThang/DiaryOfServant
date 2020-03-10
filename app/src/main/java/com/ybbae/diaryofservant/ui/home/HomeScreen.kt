@@ -1,4 +1,4 @@
-package com.ybbae.happycat.ui.home
+package com.ybbae.diaryofservant.ui.home
 
 import androidx.compose.Composable
 import androidx.ui.core.Text
@@ -9,9 +9,9 @@ import androidx.ui.material.MaterialTheme
 import androidx.ui.material.TopAppBar
 import androidx.ui.tooling.preview.Preview
 import androidx.ui.unit.dp
-import com.ybbae.happycat.R
-import com.ybbae.happycat.ui.VectorImageButton
-import com.ybbae.happycat.ui.lightThemeColors
+import com.ybbae.diaryofservant.R
+import com.ybbae.diaryofservant.ui.VectorImageButton
+import com.ybbae.diaryofservant.ui.lightThemeColors
 
 @Composable
 fun HomeScreen(openDrawer : () -> Unit)

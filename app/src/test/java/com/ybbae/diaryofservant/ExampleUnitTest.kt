@@ -1,4 +1,4 @@
-package com.ybbae.happycat
+package com.ybbae.diaryofservant
 
 import org.junit.Test
 

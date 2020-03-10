@@ -1,7 +1,6 @@
-package com.ybbae.happycat.ui
+package com.ybbae.diaryofservant.ui
 
 import androidx.compose.Model
-import androidx.compose.frames.ModelList
 
 sealed class Screen {
 	object Home : Screen()
