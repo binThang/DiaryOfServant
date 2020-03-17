@@ -17,6 +17,7 @@ import androidx.ui.unit.dp
 import com.ybbae.diaryofservant.R
 import com.ybbae.diaryofservant.ui.blog.BlogScreen
 import com.ybbae.diaryofservant.ui.home.HomeScreen
+import com.ybbae.diaryofservant.ui.photo.TimelineScreen
 import com.ybbae.diaryofservant.ui.shoping.ShopingScreen
 
 @Composable
@@ -56,9 +57,10 @@ private fun AppContent(openDrawer: () -> Unit) {
 	Crossfade(AppStatus.currentScreen) { screen ->
 		Surface(color = (MaterialTheme.colors()).background) {
 			when (screen) {
-				is Screen.Home -> HomeScreen { openDrawer() }
-				is Screen.CatShoping -> ShopingScreen { openDrawer() }
-				is Screen.CatBlog -> BlogScreen { openDrawer() }
+				is DSScreen.DSHomeScreen -> HomeScreen { openDrawer() }
+				is DSScreen.DSShoppingScreen -> ShopingScreen { openDrawer() }
+				is DSScreen.DSBlogScreen -> BlogScreen { openDrawer() }
+				is DSScreen.DSPhotoScreen -> TimelineScreen { openDrawer() }
 			}
 		}
 	}
@@ -66,11 +68,9 @@ private fun AppContent(openDrawer: () -> Unit) {
 
 @Composable
 private fun AppDrawer(
-	currentScreen: Screen,
+	currentScreen: DSScreen,
 	closeDrawer: () -> Unit
 ) {
-//	val image = imageResource(id = R.drawable.ic_launcher_foreground)
-
 	Column(modifier = LayoutSize.Fill) {
 		Container(modifier = LayoutSize(96.dp, 96.dp) + LayoutPadding(16.dp)) {
 			Clip(shape = RoundedCornerShape(8.dp)) {
@@ -87,36 +87,36 @@ private fun AppDrawer(
 		DrawerButton(
 			icon = R.drawable.ic_home,
 			label = "홈",
-			isSelected = currentScreen == Screen.Home,
+			isSelected = currentScreen == DSScreen.DSHomeScreen,
 			action = {
-				navigateTo(Screen.Home)
+				navigateTo(DSScreen.DSHomeScreen)
 				closeDrawer()
 			}
 		)
 		DrawerButton(
 			icon = R.drawable.ic_home,
 			label = "쇼핑",
-			isSelected = currentScreen == Screen.CatShoping,
+			isSelected = currentScreen == DSScreen.DSShoppingScreen,
 			action = {
-				navigateTo(Screen.CatShoping)
+				navigateTo(DSScreen.DSShoppingScreen)
 				closeDrawer()
 			}
 		)
 		DrawerButton(
 			icon = R.drawable.ic_home,
 			label = "사진",
-			isSelected = currentScreen == Screen.CatPhoto,
+			isSelected = currentScreen == DSScreen.DSPhotoScreen,
 			action = {
-				navigateTo(Screen.CatPhoto)
+				navigateTo(DSScreen.DSPhotoScreen)
 				closeDrawer()
 			}
 		)
 		DrawerButton(
 			icon = R.drawable.ic_home,
 			label = "캣로그",
-			isSelected = currentScreen == Screen.CatBlog,
+			isSelected = currentScreen == DSScreen.DSBlogScreen,
 			action = {
-				navigateTo(Screen.CatBlog)
+				navigateTo(DSScreen.DSBlogScreen)
 				closeDrawer()
 			}
 		)
@@ -178,6 +178,6 @@ private fun DrawerButton(
 fun Preview()
 {
 	MaterialTheme(colors = lightThemeColors) {
-		AppDrawer(currentScreen = Screen.CatPhoto, closeDrawer = {})
+		AppDrawer(currentScreen = DSScreen.DSPhotoScreen, closeDrawer = {})
 	}
 }
