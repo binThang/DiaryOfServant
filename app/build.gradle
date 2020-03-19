@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'com.google.gms.google-services'
 
 android {
     compileSdkVersion 29
@@ -64,6 +65,8 @@ dependencies {
     androidTestImplementation("androidx.test:runner:1.2.0")
     androidTestImplementation("androidx.ui:ui-platform:$compose_version")
     androidTestImplementation("androidx.ui:ui-test:$compose_version")
+
+    implementation 'com.google.firebase:firebase-analytics:17.2.2'
 
     ktlint 'com.pinterest:ktlint:0.36.0'
 }

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "42917718402",
+    "firebase_url": "https://diary-of-servant.firebaseio.com",
+    "project_id": "diary-of-servant",
+    "storage_bucket": "diary-of-servant.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:42917718402:android:c04d6f258cdaddd3c2479b",
+        "android_client_info": {
+          "package_name": "com.ybbae.diaryofservant"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "42917718402-hr6q9c9fvl4h71a68ondsbr7b4s3ju9j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDkqrQHI9CnEVY5g9slPk88kk1c_e4d_zw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "42917718402-hr6q9c9fvl4h71a68ondsbr7b4s3ju9j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
