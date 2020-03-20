@@ -2,18 +2,19 @@ package com.ybbae.diaryofservant.ui
 
 import androidx.compose.Model
 
-sealed class Screen {
-	object Home : Screen()
-	object CatShoping : Screen()
-	object CatPhoto : Screen()
-	object CatBlog : Screen()
+sealed class DSScreen {
+	object DSHomeScreen : DSScreen()
+	object DSShoppingScreen : DSScreen()
+	object DSPhotoScreen : DSScreen()
+	object DSWriteCardScreen : DSScreen()
+	object DSBlogScreen : DSScreen()
 }
 
 @Model
 object AppStatus {
-	var currentScreen: Screen = Screen.Home
+	var currentScreen: DSScreen = DSScreen.DSHomeScreen
 }
 
-fun navigateTo(destination: Screen) {
+fun navigateTo(destination: DSScreen) {
 	AppStatus.currentScreen = destination
 }
