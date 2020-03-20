@@ -1,2 +1,2 @@
-package com.ybbae.diaryofservant.ui.photo
+package com.ybbae.diaryofservant.ui.timeline
 

@@ -6,6 +6,7 @@ sealed class DSScreen {
 	object DSHomeScreen : DSScreen()
 	object DSShoppingScreen : DSScreen()
 	object DSPhotoScreen : DSScreen()
+	object DSWriteCardScreen : DSScreen()
 	object DSBlogScreen : DSScreen()
 }
 

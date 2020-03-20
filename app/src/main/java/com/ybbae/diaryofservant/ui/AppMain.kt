@@ -17,7 +17,7 @@ import androidx.ui.unit.dp
 import com.ybbae.diaryofservant.R
 import com.ybbae.diaryofservant.ui.blog.BlogScreen
 import com.ybbae.diaryofservant.ui.home.HomeScreen
-import com.ybbae.diaryofservant.ui.photo.TimelineScreen
+import com.ybbae.diaryofservant.ui.timeline.TimelineScreen
 import com.ybbae.diaryofservant.ui.shoping.ShopingScreen
 
 @Composable

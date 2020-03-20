@@ -1,4 +1,4 @@
-package com.ybbae.diaryofservant.ui.photo
+package com.ybbae.diaryofservant.ui.timeline
 
 import androidx.compose.Composable
 import androidx.ui.core.Text
@@ -47,5 +47,5 @@ fun TimelineScreen(openDrawer : () -> Unit) {
 @Preview
 @Composable
 fun Preview() {
-	TimelineScreen(openDrawer = {})
+	TimelineScreen() {}
 }

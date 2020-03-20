@@ -12,7 +12,7 @@ import androidx.ui.unit.dp
 import com.ybbae.diaryofservant.R
 import com.ybbae.diaryofservant.ui.VectorImageButton
 import com.ybbae.diaryofservant.ui.lightThemeColors
-import com.ybbae.diaryofservant.ui.photo.TimelineScreen
+import com.ybbae.diaryofservant.ui.timeline.TimelineScreen
 
 @Composable
 fun BlogScreen(openDrawer : () -> Unit)
