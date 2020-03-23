@@ -18,6 +18,7 @@ import androidx.ui.material.*
 import androidx.ui.material.surface.Surface
 import androidx.ui.tooling.preview.Preview
 import androidx.ui.unit.dp
+import com.firebase.ui.auth.AuthUI
 import com.ybbae.diaryofservant.R
 import com.ybbae.diaryofservant.model.user.SessionManager
 import com.ybbae.diaryofservant.ui.*

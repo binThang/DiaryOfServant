@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/btn_signin_google"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Google" />
+
+    <Button
+        android:id="@+id/btn_signin_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="E-Mail" />
+
+    <Button
+        android:id="@+id/btn_signin_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Phone" />
+</LinearLayout>
