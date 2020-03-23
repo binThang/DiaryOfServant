@@ -1,8 +1,11 @@
-package com.ybbae.diaryofservant.ui
+package com.ybbae.diaryofservant.ui.main
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.ui.core.setContent
+import com.ybbae.diaryofservant.ui.login.SignInActivity
+import com.ybbae.diaryofservant.ui.main.AppMain
 
 class MainActivity : AppCompatActivity()
 {
@@ -10,7 +13,9 @@ class MainActivity : AppCompatActivity()
     {
         super.onCreate(savedInstanceState)
         setContent {
-            AppMain()
+            AppMain() {
+                startActivity(Intent(this, SignInActivity.javaClass))
+            }
         }
     }
 }

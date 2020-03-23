@@ -1,10 +1,14 @@
-package com.ybbae.diaryofservant.ui
+package com.ybbae.diaryofservant.ui.main
 
+import android.content.Intent
+import android.se.omapi.Session
 import androidx.annotation.DrawableRes
 import androidx.compose.Composable
 import androidx.compose.state
+import androidx.core.content.ContextCompat.startActivity
 import androidx.ui.animation.Crossfade
 import androidx.ui.core.Clip
+import androidx.ui.core.ContextAmbient
 import androidx.ui.core.Modifier
 import androidx.ui.core.Text
 import androidx.ui.foundation.shape.corner.RoundedCornerShape
@@ -15,13 +19,16 @@ import androidx.ui.material.surface.Surface
 import androidx.ui.tooling.preview.Preview
 import androidx.ui.unit.dp
 import com.ybbae.diaryofservant.R
+import com.ybbae.diaryofservant.model.user.SessionManager
+import com.ybbae.diaryofservant.ui.*
 import com.ybbae.diaryofservant.ui.blog.BlogScreen
 import com.ybbae.diaryofservant.ui.home.HomeScreen
+import com.ybbae.diaryofservant.ui.login.SignInActivity
 import com.ybbae.diaryofservant.ui.timeline.TimelineScreen
 import com.ybbae.diaryofservant.ui.shoping.ShopingScreen
 
 @Composable
-fun AppMain()
+fun AppMain(startSignInActivity: () -> Unit)
 {
 	val (drawerState, onDrawerStateChange) = state(
 		init = {DrawerState.Closed},
@@ -37,11 +44,9 @@ fun AppMain()
 			onStateChange = onDrawerStateChange,
 			gesturesEnabled = drawerState == DrawerState.Opened,
 			drawerContent = {
-				AppDrawer(
-					currentScreen = AppStatus.currentScreen,
-					closeDrawer = {
-						onDrawerStateChange(DrawerState.Closed)
-					})
+				AppDrawer(currentScreen = AppStatus.currentScreen, closeDrawer = {
+					onDrawerStateChange(DrawerState.Closed)
+				}, startSignInActivity = startSignInActivity)
 			},
 			bodyContent = {
 				AppContent {
@@ -69,57 +74,64 @@ private fun AppContent(openDrawer: () -> Unit) {
 @Composable
 private fun AppDrawer(
 	currentScreen: DSScreen,
-	closeDrawer: () -> Unit
+	closeDrawer: () -> Unit,
+	startSignInActivity: () -> Unit
 ) {
+	var user = SessionManager.getUser();
+
 	Column(modifier = LayoutSize.Fill) {
-		Container(modifier = LayoutSize(96.dp, 96.dp) + LayoutPadding(16.dp)) {
-			Clip(shape = RoundedCornerShape(8.dp)) {
-				VectorImage(id = R.drawable.ic_launcher_foreground)
+		if (user != null)
+		{
+			Container(modifier = LayoutSize(96.dp, 96.dp) + LayoutPadding(16.dp)) {
+				Clip(shape = RoundedCornerShape(8.dp)) {
+					VectorImage(id = R.drawable.ic_launcher_foreground)
+				}
+			}
+			Text(text = user.displayName?:user.providerId, modifier = LayoutPadding(16.dp, 8.dp, 0.dp, 0.dp), style = themeTypography.h4)
+			Text(text = "Green Level", modifier = LayoutPadding(16.dp, 0.dp, 0.dp, 16.dp))
+		}
+		else
+		{
+			Container(width = 200.dp, height = 100.dp) {
+				Button(shape = RoundedCornerShape(5.dp),
+					onClick = {
+						startSignInActivity()
+					},
+					backgroundColor = Color.Green) {
+					Text(text = "로그인")
+				}
 			}
 		}
-		Text(
-			text = "빈땡",
-			modifier = LayoutPadding(16.dp, 8.dp, 0.dp, 0.dp),
-			style = themeTypography.h4
-		)
-		Text(text = "Green Level", modifier = LayoutPadding(16.dp, 0.dp, 0.dp, 16.dp))
+
 		Divider(color = Color(0x14333333))
-		DrawerButton(
-			icon = R.drawable.ic_home,
+		DrawerButton(icon = R.drawable.ic_home,
 			label = "홈",
 			isSelected = currentScreen == DSScreen.DSHomeScreen,
 			action = {
 				navigateTo(DSScreen.DSHomeScreen)
 				closeDrawer()
-			}
-		)
-		DrawerButton(
-			icon = R.drawable.ic_home,
+			})
+		DrawerButton(icon = R.drawable.ic_home,
 			label = "쇼핑",
 			isSelected = currentScreen == DSScreen.DSShoppingScreen,
 			action = {
 				navigateTo(DSScreen.DSShoppingScreen)
 				closeDrawer()
-			}
-		)
-		DrawerButton(
-			icon = R.drawable.ic_home,
+			})
+		DrawerButton(icon = R.drawable.ic_home,
 			label = "사진",
 			isSelected = currentScreen == DSScreen.DSPhotoScreen,
 			action = {
 				navigateTo(DSScreen.DSPhotoScreen)
 				closeDrawer()
-			}
-		)
-		DrawerButton(
-			icon = R.drawable.ic_home,
+			})
+		DrawerButton(icon = R.drawable.ic_home,
 			label = "캣로그",
 			isSelected = currentScreen == DSScreen.DSBlogScreen,
 			action = {
 				navigateTo(DSScreen.DSBlogScreen)
 				closeDrawer()
-			}
-		)
+			})
 	}
 }
 
@@ -156,11 +168,7 @@ private fun DrawerButton(
 			elevation = 0.dp
 		) {
 			Row(arrangement = Arrangement.Start) {
-				VectorImage(
-					modifier = LayoutGravity.Center,
-					id = icon,
-					tint = textIconColor
-				)
+				VectorImage(modifier = LayoutGravity.Center, id = icon, tint = textIconColor)
 				Spacer(modifier = LayoutWidth(16.dp))
 				Text(
 					text = label,
@@ -178,6 +186,6 @@ private fun DrawerButton(
 fun Preview()
 {
 	MaterialTheme(colors = lightThemeColors) {
-		AppDrawer(currentScreen = DSScreen.DSPhotoScreen, closeDrawer = {})
+		AppDrawer(currentScreen = DSScreen.DSPhotoScreen, closeDrawer = {}, startSignInActivity = {})
 	}
 }
